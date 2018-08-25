@@ -1,0 +1,15 @@
+[
+    "app": {
+        "js/riot+compiler.min.js",
+        "js/bootstrap.bundle.min.js",
+        "js/app.js",
+        "js/axiom_websocket.js"
+    },
+    "riot":{
+        "components/widget-card.tag",
+        "components/widget-debug.tag",
+        "components/widget-modal.tag",
+        "components/view-page.tag",
+        "components/view-commands.tag"
+    }
+]

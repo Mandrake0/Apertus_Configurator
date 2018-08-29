@@ -1,12 +1,16 @@
 # Apertus Axiom Web Interface
 
 This is another setup for the Apertus Axiom Interface. May target here is to use some abstraction to get a focus on the main function of the camera.
+There are also some other focuses 
+
+* there is only English as Default Language
+* All Interface Layout / Functions / Configurations are in JSON Files
 
 #### Target Features
 
-* All Function are in a Database that can be searched
+* All Function are in a Database that can be searched (at the moment JSON File)
 * Interface are Layoutet in Tabs
-* Tabs can be Add or Deleted and Edited
+* Tabs can be Add or Deleted and Edited (not in first Version)
 * Preset Storage
 
 
@@ -18,7 +22,11 @@ This is another setup for the Apertus Axiom Interface. May target here is to use
 /icon       -> when project is on first version all icons will be inside here
 
 #### Structure (simple)
-DB.file <> PouchDB <> Custom DB Function <> Controller <> Riot Component
+**Current State**
+JSON FIle <> Custom DB Function <> Riot View Component
+
+**Target**
+DB.file <> PouchDB <> Custom DB Function <> Riot View Component
 
 
 #### Used JS Libs
@@ -34,6 +42,10 @@ DB.file <> PouchDB <> Custom DB Function <> Controller <> Riot Component
 Index HTML -> View TAG -> Widget Tag
 
 ## Data Structure
+
+**NOTE** 
+The Question will be does it makes sense to add a timecode for simple update with no DB could be possible. 
+Does it also make sense to add a Camera ID into each parameter for makeing a Multicamera Setup simpler?
 
 ### Function
 
@@ -74,3 +86,16 @@ Index HTML -> View TAG -> Widget Tag
     "_pos":"value",
     "components": ["comp01_id", "comp02_id"]
 }
+
+
+## Observable
+
+**Triggers**
+* loadPage      -> Loading Selected Page
+* loadSetup     -> Loading Setup View
+
+## Web Sockets
+
+### Connections
+
+There will be 2 Ports one for a open stream from the Camera to the Web Interface second a Communication port from Web Inetrface to Camera.

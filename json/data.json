@@ -3,20 +3,20 @@
         "class": "component",
         "value": "1/100",
         "defaultValue": "1/100",
-        "selection": "['1/10', '1/50', '1/100', '1/200']",
+        "selection": "1/10, 1/50, 1/100, 1/200",
         "command": "no command"
     },
     { "_id": "id_02", "type": "component", "name": "name_02",
         "class": "component",
         "value": "BBB",
-        "defaultValue": "BBB",
+        "defaultValue": "B",
         "selection": "",
         "command": "no command"
     },
     { "_id": "id_03", "type": "component", "name": "name_03",
         "class": "component",
         "value": "CCC",
-        "defaultValue": "CCC",
+        "defaultValue": "A",
         "selection": "",
         "command": "no command"
     },
@@ -27,14 +27,14 @@
         "selection": "",
         "command": "no command"
     },
-    { "_id": "id_05", "type": "page", "name": "page_01",
+    { "_id": "id_05", "type": "page", "name": "Basic Function",
         "pos": "1",
         "components": [
             "id_01",
             "id_02"
         ]
     },
-    { "_id": "id_06", "type": "page", "name": "page_02",
+    { "_id": "id_06", "type": "page", "name": "Image",
         "pos": "0",
         "components": [
             "id_01",
@@ -42,7 +42,7 @@
             "id_03"
         ]
     },
-    { "_id": "id_07", "type": "page", "name": "page_03",
+    { "_id": "id_07", "type": "page", "name": "Sensor",
         "pos": "2",
         "components": [
             "id_01",

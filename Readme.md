@@ -10,12 +10,12 @@ There are also some other focuses
 
 * All Function are in a Database that can be searched (at the moment JSON File)
 * Interface are Layoutet in Tabs
-* Tabs can be Add or Deleted and Edited (not in first Version)
-* Preset Storage
+* Tabs can be Add or Deleted and Edited (not in this Version)
+* Preset Storage (not in this Version)
 
 
 #### Folder Layout
-/component  -> All view and widget components Templates are here
+/component  -> All view and widget components are here
 /css        -> CSS File Location
 /js         -> External JS files and App.js
 /img        -> Image Folder
@@ -31,8 +31,9 @@ DB.file <> PouchDB <> Custom DB Function <> Riot View Component
 
 #### Used JS Libs
 * Riot.js       (MVC Lib)
-* PouchDB       (Database stores all Commands / Presets / Interface layout)
 * Bootstrap     (GUI Components Stylesheet)
+* PouchDB       (Database stores all Commands / Presets / Interface layout) **NOT INPLEMENTED**
+    
 
 
 ### Components
@@ -44,8 +45,8 @@ Index HTML -> View TAG -> Widget Tag
 ## Data Structure
 
 **NOTE** 
-The Question will be does it makes sense to add a timecode for simple update with no DB could be possible. 
-Does it also make sense to add a Camera ID into each parameter for makeing a Multicamera Setup simpler?
+There are some Questions open that should be solved on a later stage. 
+Current Target is to have something to work with.
 
 ### Function
 
@@ -99,3 +100,15 @@ Does it also make sense to add a Camera ID into each parameter for makeing a Mul
 ### Connections
 
 There will be 2 Ports one for a open stream from the Camera to the Web Interface second a Communication port from Web Inetrface to Camera.
+
+Example sent Command
+{
+    "sender" : "web_ui",
+    "module" : "image_sensor",
+    "command" : "set_gain",
+    "value" : "3"
+    "timestamp" : "",  // can't remember the format for now
+    "status" : "success"    //have still to be defined finally
+}
+
+

@@ -48,5 +48,12 @@
             "id_01",
             "id_03"
         ]
+    },
+    { "_id": "id_08", "type": "component", "name": "Tempeture",
+        "class": "diagram",
+        "value": "tempeture",
+        "defaultValue": "20",
+        "selection": "",
+        "command": "no command"
     }
 ]

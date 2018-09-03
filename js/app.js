@@ -12,26 +12,6 @@ fetch(url)
     })
     .catch(err => { throw err })
 
-class CustomWebSocket {
-
-    constructor(url){
-        this._ws = new WebSocket(url)
-    }
-    
-    onmessage(){
-        this._ws.onmessage = (event) =>{
-            console.log(event)
-        }
-    }
-    sendMessage(){
-        this._ws.onopen = () =>{
-            this._ws.send("hello")
-        }
-    }
-
-}
-
-
 // Mixin Setup with the values
 var SharedMixin = {
     observable: riot.observable(),

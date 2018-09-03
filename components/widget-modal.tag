@@ -25,7 +25,7 @@
         <div class="modal-footer">
             <button onclick={ setToDefault } type="button" class="btn btn-light">Set to Default</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button onclick={ updateParameter } type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+            <button onclick={ updateValue } type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
         </div>
         </div>
     </div>
@@ -55,12 +55,13 @@ setToDefault(){
 
 selectedOnChange (e){
     self.dataObject.value = e.srcElement.value
-    console.log(self.dataObject.value)
     self.update()
 }
 
-updateParameter(){
-    db.updateItem(self.dataObject)
+updateValue(){
+    // 
+    self.observable.trigger("ID_" + self.dataObject._id, self.dataObject)
+    //db.updateItem(self.dataObject)
 }
 
 /**

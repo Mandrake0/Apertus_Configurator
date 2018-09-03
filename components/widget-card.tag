@@ -39,14 +39,25 @@ this.dataObject = opts.data
 // Set Values
 this.title = this.dataObject.name
 this.value = this.dataObject.value
+this.id = this.dataObject._id
 
 this.on('mount', function() {
-    console.log(this.title, this.value)
+    //console.log(this.title, this.value)
 })
 
 editValue(e){
     self.observable.trigger('loadEditWindow', self.dataObject)   // Passing the Component Dataset
 }
+
+/**
+ * OBSERVABLE
+ */
+
+// On ID 
+this.observable.on("ID_" + this.id, function(value){
+    self.value = value.value
+    self.update()
+})
 
 </script>
 </widget-card>

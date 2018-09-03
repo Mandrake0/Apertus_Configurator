@@ -39,8 +39,6 @@ this.on('mount', function() {
 // Load Page Components
 this.observable.on('loadPage', function(setPageValue){
     self.disable = false
-    console.log("get Command: setPage")
-    console.log(setPageValue)
     self.components = setPageValue
     self.update()
 })

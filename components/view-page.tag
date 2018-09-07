@@ -3,7 +3,8 @@
     <!-- Load Components // Note: the full Object gets sendet to the Widget -->
     <div>
         <div each={ data, i in components }>
-            <widget-card data={ data } ></widget-card>
+            <widget-card if={data.class == 'component'} data={ data } ></widget-card>
+            <widget-diagram if={data.class == 'diagram'} data={ data }></widget-diagram>
         </div>
     </div>
 

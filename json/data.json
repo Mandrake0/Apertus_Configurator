@@ -31,7 +31,8 @@
         "pos": "1",
         "components": [
             "id_01",
-            "id_02"
+            "id_02",
+            "id_08"
         ]
     },
     { "_id": "id_06", "type": "page", "name": "Image",
@@ -49,11 +50,20 @@
             "id_03"
         ]
     },
-    { "_id": "id_08", "type": "component", "name": "Tempeture",
+    { "_id": "id_08", "type": "component", "name": "Battery",
         "class": "diagram",
-        "value": "tempeture",
-        "defaultValue": "20",
-        "selection": "",
-        "command": "no command"
+        "value": "",
+        "defaultIcon": "icon/battery/baseline-battery_unknown-24px.svg",
+        "selectionType": "range",
+        "selection": {
+            "range":[5,20,50,99,100],
+            "icon":[
+            "icon/battery/baseline-battery_alert-24px.svg",
+            "icon/battery/baseline-battery_20-24px.svg",
+            "icon/battery/baseline-battery_50-24px.svg",
+            "icon/battery/baseline-battery_90-24px.svg",
+            "icon/battery/baseline-battery_full-24px.svg"
+            ]
+        }
     }
 ]

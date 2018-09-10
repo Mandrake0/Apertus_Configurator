@@ -1,17 +1,17 @@
 <widget-card>
 <!-- Layout -->
-<div onclick={ editValue } hide={ listView } data-toggle="modal" data-target="#exampleModal">
+<div onclick={ editValue } hide={ listView }>
 <div class="card box">
-    <div class="card-header">
+    <div class="section">
         { title }
     </div>
-    <div class="card-body">
+    <div class="section">
         { value }
     </div>
 </div>
 </div>
 <div show={ listView }>
-    <button type="button" class="butt btn btn-outline-dark btn-lg btn-block">
+    <button type="button" class="butt ">
         <b>{ title }</b> { value }
     </button>
 </div>

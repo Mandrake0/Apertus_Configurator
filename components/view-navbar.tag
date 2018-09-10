@@ -1,44 +1,27 @@
 <view-navbar>
 <!-- Layout -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-lights">
-        <a class="navbar-brand" href="#">
-          <img src="/img/apertus_Logo.svg" width="50" height="30" class="d-inline-block align-top" alt="">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li each={item, i in pagelist} class="nav-item">
-                    <a class="nav-link" onclick={ setPage }>{ item.name }<span class="sr-only">(current)</span></a>
-                </li>
-                <!-- Added to the end after the loop -->
-                <!-- Add Tab 
-                <li onclick={ makeUpdate } class="nav-item">
-                    <a class="nav-link">
-                        <i class="material-icons">add</i>
-                    </a>
-                </li>
-                -->
-                <!-- List View -->
-                <li onclick={ setListView } class="nav-item">
-                    <a class="nav-link">
-                        <i class="material-icons">view_list</i>
-                    </a>
-                </li>
-                <!-- App Settings -->
-                <li onclick={ setConfiguration } class="nav-item">
-                    <a class="nav-link">
-                        <i class="material-icons">settings</i>
-                    </a>
-                </li>
-            </ul>
+<header class="sticky">
+        <a class="logo"><img src="/img/apertus_Logo.svg" width="50" height="30" class="block" alt=""></a>
+        <div each={item, i in pagelist} class="block">
+            <a class="button" onclick={ setPage }>{ item.name }</a>
         </div>
-    </nav>
+        <!-- List View -->
+        <div onclick={ setListView } class="block">
+                <i class="material-icons">view_list</i>
+        </div>
+        <!-- App Settings -->
+        <div onclick={ setConfiguration } class="block">
+                <i class="material-icons">settings</i>
+        </div>
+
+</header>
 
 <!-- Custom Style -->
 <style>
-
+    .block{
+        margin: 5px;
+        display: inline-block;
+    }
 </style>
 
 <!-- Script -->

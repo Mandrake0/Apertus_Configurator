@@ -1,20 +1,24 @@
 <widget-diagram>
 <!-- Layout -->
 <div class="card box">
-    <div class="card-header">
+    <div class="section">
             { title }
     </div>
-    <div class="card-body">
+    <div class="">
         <div>
-            <img src={ icon } width="48" height="48">
-            <a class="size">{ value }</a>
+            <img class="align" src={ icon } width="48" height="48">
+            <span class="size">{ value }</span>
         </div>
     </div>
 </div>
 <!-- Custom Style -->
 <style>
-    a.size {
-        font-size: 24px;
+    .align {
+        vertical-align: middle;
+        margin: 2px;
+    }
+    .size {
+        font-size: 22px;
     }
     div.box {
         margin: 5px;

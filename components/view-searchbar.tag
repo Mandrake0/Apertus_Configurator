@@ -3,20 +3,14 @@
     <div>
         <!-- Search Bar -->
         <!-- TODO Needs to be fixed -->
-        <div  class="form-search input-group">
+        <div  class="form-search ">
             <input autofocus onkeydown={ quickEdit } oninput={ searchQuery } type="text" class="form-control" placeholder="Search">
-            <div class="input-group-btn">
-                <!--
-                <button class="form-submit btn btn-default" type="submit">
-                    <i class="material-icons">search</i>
-                </button>
-                -->
-            </div>
+
         </div>
         <div show={ searchValue }  class="dropdown">
-        <div class="dropdown-menu show" aria-labelledby="dropdownMenuButton">
+        <div class=" show" aria-labelledby="dropdownMenuButton">
             <div each={ searchResult, i in searchComponents } >
-                <a class="dropdown-item" href="#">{ searchResult.name }</a>
+                <h6 href="#">{ searchResult.name }</h6>
             </div>
         </div>
         </div>

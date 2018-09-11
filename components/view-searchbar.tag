@@ -2,17 +2,13 @@
     <!-- Layout -->
     <div>
         <!-- Search Bar -->
-        <!-- TODO Needs to be fixed -->
-        <div  class="form-search ">
+        <div  class="form-search dropdown">
             <input autofocus onkeydown={ quickEdit } oninput={ searchQuery } type="text" class="form-control" placeholder="Search">
-
         </div>
-        <div show={ searchValue }  class="dropdown">
-        <div class=" show" aria-labelledby="dropdownMenuButton">
+        <div show={ searchValue } class="dropdown-content">
             <div each={ searchResult, i in searchComponents } >
                 <h6 href="#">{ searchResult.name }</h6>
             </div>
-        </div>
         </div>
     </div>
 
@@ -23,11 +19,28 @@
         width: 400px;
     }
     .form-submit{   
-    margin-top: 5px;
-    padding-top: 3px;
-    padding-bottom: 3px;
+        margin-top: 5px;
+        padding-top: 3px;
+        padding-bottom: 3px;
     }
-    
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        padding: 12px 16px;
+        z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
 </style>
 
 <!-- Script -->

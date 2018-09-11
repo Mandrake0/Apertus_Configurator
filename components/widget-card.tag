@@ -1,14 +1,12 @@
 <widget-card>
 <!-- Layout -->
-<div onclick={ editValue } hide={ listView }>
-<div class="card box">
+<div class="card box" onclick={ editValue } hide={ listView }>
     <div class="section">
-        { title }
+        <h5>{ title }</h5>
     </div>
     <div class="section">
         { value }
     </div>
-</div>
 </div>
 <div show={ listView }>
     <button type="button" class="butt ">

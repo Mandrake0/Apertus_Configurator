@@ -1,23 +1,55 @@
 <view-navbar>
 <!-- Layout -->
 <header class="sticky">
-        <a class="logo"><img src="/img/apertus_Logo.svg" width="50" height="30" class="block" alt=""></a>
-        <div each={item, i in pagelist} class="block">
-            <a class="button" onclick={ setPage }>{ item.name }</a>
+    <a class="logo"><img src="/img/apertus_Logo.svg" width="50" height="30" class="block" alt=""></a>
+    <div each={item, i in pagelist} class="block hidden-sm">
+        <a class="button" onclick={ setPage }>{ item.name }</a>
+    </div>
+    <!-- List View -->
+    <div onclick={ setListView } class="block hidden-sm">
+            <i class="material-icons">view_list</i>
+    </div>
+    <!-- App Settings -->
+    <div onclick={ setConfiguration } class="block hidden-sm">
+            <i class="material-icons">settings</i>
+    </div>
+
+
+    <!-- DRAWER -->
+    <div class="right">
+        <label onclick={ testListner } for="drawer-control" class="button drawer-toggle"></label>
+    </div>
+    
+    <!-- Drawer Menu -->
+    <input type="checkbox" id="drawer-control" class="drawer">
+    <div id="drawerWindow">
+        <label for="drawer-control" class="drawer-close"></label>
+        <div onclick={ setPage } each={item, i in pagelist} >
+            <a class="button" >{ item.name }</a>
         </div>
         <!-- List View -->
-        <div onclick={ setListView } class="block">
+        <div onclick={ setListView }>
+            <div class="button">
                 <i class="material-icons">view_list</i>
+                <span>List View</span>
+            </div>
         </div>
         <!-- App Settings -->
-        <div onclick={ setConfiguration } class="block">
+        <div onclick={ setConfiguration }>
+            <div class="button">
                 <i class="material-icons">settings</i>
+                <span>Settings</span>
+            </div>
         </div>
-
+    </div>
 </header>
 
 <!-- Custom Style -->
 <style>
+    .right{
+        float: right;
+        display: inline-block;
+    }
     .block{
         margin: 5px;
         display: inline-block;
@@ -40,8 +72,18 @@ this.on('mount', function() {
     // Getting all pages from ObjectList
     self.pagelist = db.queryItems('type', 'page')
     self.update()
+
   })
 
+testListner(e){
+    var d = document.body
+    var dwarea = document.getElementById("drawerWindow").getBoundingClientRect()
+    
+    d.addEventListener("click", function(event){
+        console.log(dwarea)
+        
+    })
+}
 
 // Set Page 
 setPage(e){

@@ -27,10 +27,16 @@ this.disable = false
 
 // On Load get first Page with the Components 
 this.on('mount', function() {
-    // Getting all components from the First page
-    var pagelist = db.queryItems('type', 'page')
-    self.observable.trigger('loadPage',db.queryItems('_id', pagelist[0].components) )
-    self.update()
+    console.log("load Database")
+    self.observable.trigger('DB_loadDatabase')
+})
+
+this.observable.on('DB_databaseLoaded',function(){
+    self.observable.trigger('DB_queryItems',"firstPageLoad", 'type', 'page')
+})
+
+this.observable.on('firstPageLoad', function(data){
+    self.observable.trigger('DB_queryItems', 'loadPage', '_id', data[0].components)
 })
 
 /**

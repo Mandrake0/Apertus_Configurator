@@ -78,7 +78,7 @@ this.observable.on('*', function(event, data){
     if('ID_' === event.slice(0,3)){
         self.send(self.createMessage(data))
     }
-    console.log("data:", event, data)
+    //console.log("data:", event, data)
 })
 
 

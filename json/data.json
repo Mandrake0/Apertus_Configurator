@@ -3,7 +3,7 @@
         "class": "component",
         "value": "1/100",
         "defaultValue": "1/100",
-        "selection": "1/10, 1/50, 1/100, 1/200",
+        "selection": "1/10,1/50,1/100,1/200",
         "command": "no command"
     },
     { "_id": "id_02", "type": "component", "name": "name_02",

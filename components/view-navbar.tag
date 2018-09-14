@@ -1,7 +1,7 @@
 <view-navbar>
 <!-- Layout -->
 <header class="sticky">
-    <a class="logo"><img src="/img/apertus_Logo.svg" width="50" height="30" class="block" alt=""></a>
+    <a class="logo block"><img src="/img/apertus_Logo.svg" width="60" class="block" alt=""></a>
     <div each={item, i in pagelist} class="block hidden-sm">
         <a class="button" onclick={ setPage }>{ item.name }</a>
     </div>
@@ -68,31 +68,29 @@ this.mixin(SharedMixin)
 this.pagelist = []
 
 // On Load get first Page with the Components 
-this.on('mount', function() {
-    // Getting all pages from ObjectList
-    self.pagelist = db.queryItems('type', 'page')
+this.observable.on('firstPageLoad', function(data){
+    self.pagelist = data
     self.update()
+})
 
-  })
-
+// TODO nedds to be fixed
 testListner(e){
     var d = document.body
     var dwarea = document.getElementById("drawerWindow").getBoundingClientRect()
     
     d.addEventListener("click", function(event){
         console.log(dwarea)
-        
     })
 }
 
 // Set Page 
 setPage(e){
     var i = e.item.i
-    self.pagelist = db.queryItems('type', 'page')
     self.currentPage = self.pagelist[i]
-    self.observable.trigger('loadPage', db.queryItems('_id', self.currentPage.components) )
+    self.observable.trigger('DB_queryItems', 'loadPage', '_id', self.currentPage.components)
     self.update() 
 }
+
 // Load Commads List (view-commands.tag)
 setConfiguration(){
     self.observable.trigger('loadSetup')
@@ -100,7 +98,6 @@ setConfiguration(){
 
 // Set List View
 setListView(){
-
     //self.listView = !self.listView 
     self.update()
 }

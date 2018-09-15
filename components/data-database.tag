@@ -89,7 +89,19 @@ this.observable.on('DB_addItem', function(objectArray){
     })
 
 
+// Getting all Obsevable and check if there is a change on a component
+this.observable.on('*', function(event, data){
+    // ID Tag update Value     
+    if('ID_' === event.slice(0,3)){
+        self.data.forEach(element => {
+            if (element._id === data._id ) {
+                element.value = data.value
+            }
+        })
+        self.observable.trigger("reloadView")
+    }
 
+})
 
 
 

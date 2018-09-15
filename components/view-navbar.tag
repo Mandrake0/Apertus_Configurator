@@ -6,14 +6,17 @@
         <a class="button" onclick={ setPage }>{ item.name }</a>
     </div>
     <!-- List View -->
-    <div onclick={ setListView } class="block hidden-sm">
+    <div onclick={ setCommandList } class="block hidden-sm">
+        <div class="button">
             <i class="material-icons">view_list</i>
+        </div>
     </div>
     <!-- App Settings -->
     <div onclick={ setConfiguration } class="block hidden-sm">
+        <div class="button">
             <i class="material-icons">settings</i>
+        </div>
     </div>
-
 
     <!-- DRAWER -->
     <div class="right">
@@ -93,12 +96,13 @@ setPage(e){
 
 // Load Commads List (view-commands.tag)
 setConfiguration(){
-    self.observable.trigger('loadSetup')
+    self.observable.trigger('loadPage','loadConfiguration')
 }
 
 // Set List View
-setListView(){
-    //self.listView = !self.listView 
+setCommandList(){
+    self.observable.trigger('loadPage','loadCommand') // just a unique string value that every other view gets disabled
+    self.observable.trigger('DB_queryItems',"loadCommandList", 'type', 'component')
     self.update()
 }
 

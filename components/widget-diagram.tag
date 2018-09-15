@@ -23,6 +23,7 @@
     div.box {
         margin: 5px;
         width:  9rem;
+        height: 100px;
     }
 </style>
 <!-- Code -->

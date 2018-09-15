@@ -1,7 +1,7 @@
 <view-page hide={ disable }>
 <!-- Layout -->
     <!-- Load Components // Note: the full Object gets sendet to the Widget -->
-    <div>
+    <div class="row">
         <div each={ data, i in components }>
             <widget-card if={data.class == 'component'} data={ data } ></widget-card>
             <widget-diagram if={data.class == 'diagram'} data={ data }></widget-diagram>
@@ -45,16 +45,15 @@ this.observable.on('firstPageLoad', function(data){
 
 // Load Page Components
 this.observable.on('loadPage', function(setPageValue){
-    self.disable = false
-    self.components = setPageValue
+    if (typeof(setPageValue) === 'object'){
+        self.components = setPageValue
+        self.disable = false
+    }
+    else {
+        self.disable = true
+    }
     self.update()
 })
-
-this.observable.on('loadSetup', function(setPageValue){
-    self.disable = true
-    self.update()
-})
-
 
 </script>
 </view-page>

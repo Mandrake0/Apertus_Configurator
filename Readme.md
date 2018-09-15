@@ -48,6 +48,24 @@ Index HTML -> View TAG -> Widget Tag
 There are some Questions open that should be solved on a later stage. 
 Current Target is to have something to work with.
 
+{
+    "id"
+    "camera_id" :   "camera id"
+    "function_id" :   "unique value",
+    "type"      :   "data type",
+    "class"     :   "for what type of object"
+    "data"      {
+        "value"
+        "defaultValue"
+        "range": [0,100]
+        "custom_value": false
+    }
+}
+
+
+
+
+
 ### Function
 
 * _id               -> internal id

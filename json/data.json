@@ -52,7 +52,7 @@
         ]
     },
     { "_id": "id_08", "type": "component", "name": "Battery",
-        "class": "diagram",
+        "class": "icon",
         "value": "",
         "defaultIcon": "icon/battery/baseline-battery_unknown-24px.svg",
         "selectionType": "range",

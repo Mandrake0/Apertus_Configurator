@@ -16,7 +16,10 @@
 <style>
     .form-search{
         margin: 5px;
-        width: 400px;
+        width: 90%;    
+    }
+    .form-control{
+        width: 100%;
     }
     .form-submit{   
         margin-top: 5px;

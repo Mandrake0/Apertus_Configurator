@@ -4,7 +4,7 @@
     <div class="row">
         <div each={ data, i in components }>
             <widget-card if={data.class == 'component'} data={ data } ></widget-card>
-            <widget-diagram if={data.class == 'diagram'} data={ data }></widget-diagram>
+            <widget-icon if={data.class == 'icon'} data={ data }></widget-icon>
         </div>
     </div>
 

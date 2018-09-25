@@ -1,4 +1,4 @@
-<widget-diagram>
+<widget-icon>
 <!-- Layout -->
 <div class="card box">
     <div class="section">
@@ -63,4 +63,4 @@ this.observable.on("ID_" + this.id, function(value){
 })
 
 </script>
-</widget-diagram>
+</widget-icon>

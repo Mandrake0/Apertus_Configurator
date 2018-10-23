@@ -8,8 +8,7 @@
 * Fix some Bugs
 
 ## Manifest (PWA)
-* Fix some Bugs
-* make Splash screen working
+* add Service Worker that the PWA will work 
 
 ## Data
 
@@ -22,10 +21,5 @@
 
 ## View Tags
 
-### View-Searchbar.tag
-* Fix bad code (takes some time)
-
-
-
 ### Diagrams
-*  Add more diagramm tzpes (example> chart)
+*  Add more diagramm types (example: chart)

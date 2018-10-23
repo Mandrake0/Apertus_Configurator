@@ -1,17 +1,17 @@
 # Apertus Axiom Web Interface
 
-This is another setup for the Apertus Axiom Interface. May target here is to use some abstraction to get a focus on the main function of the camera.
-There are also some other focuses 
+This is another setup for the Apertus Axiom Interface. My target here is to use some abstraction to get a focus on the main function of the camera.
+There are also some other focuses like:
 
-* there is only English as Default Language
+* only English as Default Language
 * All Interface Layout / Functions / Configurations are in JSON Files
 
 #### Target Features
 
 * All Function are in a Database that can be searched (at the moment JSON File)
 * Interface are Layoutet in Tabs
-* Tabs can be Add or Deleted and Edited (not in this Version)
-* Preset Storage (not in this Version)
+* Tabs can be Add or Deleted and Edited (needs to be defined how it should implemented)
+* Preset Storage (needs to be defined how it should implemented)
 
 
 #### Folder Layout
@@ -26,13 +26,13 @@ There are also some other focuses
 JSON FIle <> Custom DB Function <> Riot View Component
 
 **Target**
-DB.file <> PouchDB <> Custom DB Function <> Riot View Component
+DB.file <> Custom DB Function <> Riot View Component
 
 
 #### Used JS Libs
 * Riot.js       (MVC Lib)
-* Bootstrap     (GUI Components Stylesheet)
-* PouchDB       (Database stores all Commands / Presets / Interface layout) **NOT INPLEMENTED**
+* mini.css     (GUI Components Stylesheet)
+* custom DB       (Database stores all Commands / Presets / Interface layout) **NOT INPLEMENTED**
     
 
 
@@ -129,4 +129,14 @@ Example sent Command
     "status" : "success"    //have still to be defined finally
 }
 
+## Installation
 
+Requirement npm: (https://nodejs.org/)
+
+1. Download the Project
+2. Go to Folder where the **package.json** file is
+3. Run **npm install**
+
+Development: **run_dev.sh** or **run_dev.bat**
+
+Build: **build.sh** or **build.bat**
